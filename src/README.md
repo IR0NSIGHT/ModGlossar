@@ -14,3 +14,7 @@ Look through the GlossarInit class,its the only one the modcreator is supposed t
 Only one glossar is created, all mods using the libarry will add their catergories here.
 a timed advertisment telling the player how to open the glossar is broadcast every 30 minutes, starting 10 seconds after join.
 Currently the glossar can only show text, no pictures.
+
+To be able to use the mod, you have to add it as a dependency to your intellij project:
+project strucutre >> modules >> dependencies 
+in the artifacts tab, you have to add "extracted jar" for the modglossar to your output, otherwise it will compile but crash bc it doesnt find the classes.
