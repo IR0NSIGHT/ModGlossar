@@ -65,7 +65,8 @@ class GlossarControlManager extends GUIControlManager {
         StarLoader.registerListener(PlayerChatEvent.class, new Listener<PlayerChatEvent>() {
             @Override
             public void onEvent(PlayerChatEvent event) {
-                if (event.getText().toLowerCase().equals("!glossar")) {
+
+                if (!event.isCanceled() && event.getMessage().sender.toLowerCase().equals(GameClientState.instance.getPlayerName().toLowerCase()) && event.getText().toLowerCase().equals("!glossar")) {
                     for (GUIControlManager manager: ModGUIHandler.getAllModControlManagers()) {
                         manager.setActive(false);
                     }
